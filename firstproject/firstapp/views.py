@@ -2,7 +2,6 @@ import datetime
 import random
 from django.http import HttpResponse
 from django.shortcuts import render
-from requests import request
 from firstapp.models import Registeration
 
 # Create your views here.
@@ -10,7 +9,7 @@ def display_views(request):
     s= '<h1>Welcome to Django Classes... first</h1>'
     return HttpResponse(s)
 
-def registration_views():
+def registration_views(request):
     reg_list=Registeration.objects.all()
     #reg_list=Registeration.objects.filter(name)
     my_dict={'reg_list':reg_list}
